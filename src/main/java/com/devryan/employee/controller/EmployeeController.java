@@ -38,5 +38,11 @@ public class EmployeeController {
         }
     }
 
+    @GetMapping("/employee/{id}")
+    public ResponseEntity<?> getEmployeeById (@PathVariable Long id){
+        Employee employee = employeeService.getEmployeeById(id);
+        if(employee == null ) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(employee);
+    }
 }
 
