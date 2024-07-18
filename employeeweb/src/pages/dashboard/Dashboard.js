@@ -7,6 +7,7 @@ const Dashboard = () => {
 
     const [ employees, setEmployees ] = useState([]);
     const navigate = useNavigate();
+ 
     useEffect ( () =>{
         const fetchEmployees = async () => {
             try{
@@ -43,13 +44,14 @@ const Dashboard = () => {
         navigate(`/employee/${employeeId}`);
     }
 
+
     return (
         <>
         <Container className="mt-5">
             <Row>
                 <Col>
                     <h1 className="text-center">Employees</h1>
-                    <Table striped bordered hover responsive>
+                    <Table striped bordered hover responsive id="employees">
                         <thead>
                             <tr>
                                 <th>Name</th>
